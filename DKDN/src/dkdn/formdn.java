@@ -25,7 +25,6 @@ public class formdn extends javax.swing.JFrame {
     String password = "123";
     Statement st;
     ResultSet rs;
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -116,7 +115,7 @@ public class formdn extends javax.swing.JFrame {
         try {
             Class.forName(driver);
             Connection con = DriverManager.getConnection(url, user, password);
-            String sql = "select*from account where username=?and pass=?";
+            String sql = "select * from account where username = ? and pass = ?";
             PreparedStatement ps = con.prepareCall(sql);
             ps.setString(1, txtdn.getText());
             ps.setString(2, jfpass.getText());
